@@ -423,3 +423,7 @@
   .back-link:hover {
     text-decoration: underline;
   }
+
+  .post-spacer {
+    height: 12rem; /* Definisci l'altezza desiderata */
+  }
