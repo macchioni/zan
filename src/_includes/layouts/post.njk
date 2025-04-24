@@ -3,10 +3,12 @@ layout: layouts/base.njk
 ---
 
 <article class="post">
-  <header class="post-header">
-    <time class="post-date">{{ page.date | readableDate }}</time>
-    <h1 class="post-title">{{ title }}</h1>
-  </header>
+  <header class="title-desc">
+        <h1 class="post-title">{{ title }}</h1>
+        {% if subtitle %}
+            <h2 class="post-subtitle">{{ subtitle }}</h2>
+        {% endif %}
+    </header>
   <div class="post-spacer"></div>
   <div class="post-content">
     {{ content | safe }}
