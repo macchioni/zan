@@ -1,0 +1,27 @@
+{
+    "title": "PM",
+    "description": "La tua breve descrizione",
+    "url": "https://tuodominio.com",
+    "author": {
+      "name": "Il tuo nome",
+      "email": "tua@email.com"
+    },
+    "navigation": [
+      {
+        "text": "Home",
+        "url": "/"
+      },
+      {
+        "text": "Now",
+        "url": "/now/"
+      },
+      {
+        "text": "Blog",
+        "url": "/blog/"
+      },
+      {
+        "text": "Links",
+        "url": "/links/"
+      }
+    ]
+  }
