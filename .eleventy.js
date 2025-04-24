@@ -11,6 +11,11 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Aggiungi questo filtro per l'anno corrente
+  eleventyConfig.addFilter("currentYear", () => {
+    return new Date().getFullYear();
+  });
+
   // Collezioni
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse();
