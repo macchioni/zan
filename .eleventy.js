@@ -14,9 +14,9 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      includes: "_includes", // 👈 indica dove sono gli include
-      layouts: "layouts",     // 👈 questa riga era mancante!
+      includes: "_includes", // 👈 importante!
+      layouts: "layouts",    // 👈 questo serve perché i layout sono in _includes/layouts
       output: "_site"
     }
-  };
+  };  
 };
