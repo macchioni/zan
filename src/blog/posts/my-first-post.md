@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "Il Titolo del Mio Post"
-date: 2025-0034-25
+date: 2025-02-25
 description: "Questa è la descrizione del mio post che apparirà come meta description e in altri contesti."
 tags:
   - esempio
