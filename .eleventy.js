@@ -8,11 +8,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("formatDate", (dateObj, format = "yyyy-MM-dd") => {
     return DateTime.fromJSDate(dateObj).toFormat(format);
   });
+  
+  // Aggiungi questo nuovo filtro
+  eleventyConfig.addFilter("slice", function(array, start, end) {
+    return array.slice(start, end);
+  });
 
   eleventyConfig.addPassthroughCopy("./src/assets");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse();
+    return collectionApi.getFilteredByGlob("blog/posts/*.md").reverse();
   });
 
   return {

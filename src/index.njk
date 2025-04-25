@@ -1,14 +1,46 @@
 ---
 layout: layouts/base.njk
-title: Home
+title: Pio Pio
 ---
 
-<h1>{{ title }}</h1>
+<div class="home-container">
+  <section class="intro">
+    <h1>{{ title }}</h1>
+    <p class="intro-text">Breve descrizione su di te e il tuo lavoro. Una presentazione professionale che descriva chi sei e cosa fai.</p>
+  </section>
 
-<ul>
-  {% for post in collections.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+  <section class="recent-posts">
+    <h2>Journal</h2>
+    <div class="posts-list">
+      {% set recentPosts = collections.posts | slice(0, 3) %}
+      {% for post in recentPosts %}
+        <article class="post-item">
+          <div class="post-meta">
+            <time datetime="{{ post.date | formatDate }}">{{ post.date | readableDate }}</time>
+          </div>
+          <h3 class="post-title">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+        </article>
+      {% endfor %}
+    </div>
+    <p class="more-link"><a href="/journal/">Vedi tutti i post</a></p>
+  </section>
+  
+  <section class="projects">
+    <h2>Progetti</h2>
+    <div class="projects-grid">
+      <!-- Qui potresti iterare su una collezione di progetti se la crei -->
+      <div class="project-card">
+        <h3><a href="#">Nome Progetto</a></h3>
+        <p>Breve descrizione del progetto</p>
+      </div>
+      <!-- Ripeti per altri progetti -->
+    </div>
+  </section>
+  
+  <section class="about">
+    <h2>Chi sono</h2>
+    <p>Informazioni più dettagliate su di te, la tua esperienza e i tuoi interessi.</p>
+  </section>
+</div>
