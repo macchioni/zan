@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
       if ("tags" in item.data) {
         let tags = item.data.tags;
         
-        tags.filter(tag => tag !== "posts" && tag !== "all").forEach(tag => {
+        tags.filter(tag => !["posts", "all", "tagList"].includes(tag)).forEach(tag => {
           if (!tagSet[tag]) {
             tagSet[tag] = [];
           }
