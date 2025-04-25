@@ -1,11 +1,14 @@
 {
-  "name": "nazhamid-clone",
+  "name": "pm-clone",
   "version": "1.0.0",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "luxon": "^3.4.4"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0"
+    "@11ty/eleventy": "^2.0.1"
   }
 }
