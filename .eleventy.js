@@ -35,3 +35,54 @@ module.exports = function(eleventyConfig) {
     htmlTemplateEngine: "njk"
   };
 };
+
+module.exports = function(eleventyConfig) {
+  // formatDate filter with English month names
+  eleventyConfig.addFilter("formatDate", function(date, format) {
+    const d = new Date(date);
+    
+    // Helper function to add leading zeros to numbers < 10
+    const padZero = num => num < 10 ? `0${num}` : num;
+    
+    // Base values
+    const day = padZero(d.getDate());
+    const month = padZero(d.getMonth() + 1);
+    const year = d.getFullYear();
+    
+    // Arrays with English month names
+    const fullMonths = ["January", "February", "March", "April", "May", "June", 
+                       "July", "August", "September", "October", "November", "December"];
+    
+    const shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+    // Default format: dd/mm/yyyy
+    if (!format || format === "dd/mm/yyyy") {
+      return `${day}/${month}/${year}`;
+    }
+    
+    // Support for various formats
+    if (format === "yyyy-mm-dd") {
+      return `${year}-${month}-${day}`;
+    }
+    
+    if (format === "dd LLL yyyy") {
+      return `${day} ${shortMonths[d.getMonth()]} ${year}`;
+    }
+    
+    if (format === "dd MMMM yyyy") {
+      return `${day} ${fullMonths[d.getMonth()]} ${year}`;
+    }
+    
+    // Fallback to ISO format
+    return d.toISOString().split('T')[0];
+  });
+
+  // The rest of your existing configuration
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
+    }
+  };
+};
