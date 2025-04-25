@@ -24,7 +24,7 @@ Questo è il mio primo post sul nuovo sito. Sto usando Eleventy per generare un 
 
 ## Una sezione del post
 
-Il CSS che sto utilizzando supporta molte caratteristiche tipografiche interessanti, tra cui citazioni, codice e note a piè di pagina.
+Il CSS che sto <a href="https://secretbreakfast.com">utilizzando</a> supporta molte caratteristiche tipografiche interessanti, tra cui citazioni, codice e note a piè di pagina.
 
 ```js
 // Ecco un esempio di codice
