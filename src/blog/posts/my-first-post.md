@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post
 title: "First Post"
 description: "A year when projects are in full swing."
 date: 2025-04-25
