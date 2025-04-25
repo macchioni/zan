@@ -1,9 +1,12 @@
 ---
 layout: layouts/post.njk
 title: Hustle to Flow
-subtitle: A meditation on entering flow state.
-description: I know what’s immediately ahead of me today, and I steel myself mentally.
-date: 2025-04-23
+description: A meditation on entering flow state.
+date: 2025-04-25
+tags: 
+  - posts
+  - esexample
+  - 11ty
 ---
 
 A snack beckons. I stand up and head a few feet away to the kitchen area. A hojicha latte is on my mind, and also a bite. My brain is at operational capacity, and I am in a flow state. The metabolic need feels high, and I need to keep my energy up. I make the latte, iced with almond milk. I devour an oat bar.

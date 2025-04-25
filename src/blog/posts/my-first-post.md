@@ -2,6 +2,7 @@
 title: Il mio primo post
 description: Un semplice esempio di post per il mio sito personale
 date: 2025-04-25
+layout: layouts/post.njk
 tags: 
   - posts
   - esempio
