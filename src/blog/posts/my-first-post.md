@@ -1,12 +1,10 @@
 ---
-title: "Il mio primo post"
-description: "Un semplice esempio di post per il mio sito personale"
+title: "Il Titolo del Mio Post"
 date: 2025-04-25
-layout: layouts/post.njk
-tags: 
-  - posts
+description: "Questa è la descrizione del mio post che apparirà come meta description e in altri contesti."
+tags:
   - esempio
-  - 11ty
+  - blog
 ---
 
 Questo è il mio primo post sul nuovo sito. Sto usando Eleventy per generare un sito statico con un design elegante e pulito.
