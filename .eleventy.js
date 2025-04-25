@@ -1,10 +1,16 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
+const slugify = require("slugify");
 
 module.exports = function (eleventyConfig) {
   // Aggiungi il plugin RSS
   eleventyConfig.addPlugin(pluginRss);
-  
+
+  // Filtro per slug URL-friendly
+  eleventyConfig.addFilter("slug", (input) => {
+    return slugify(input, { lower: true, remove: /[*+~.()'"!:@]/g });
+  });
+
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
   });
@@ -25,11 +31,11 @@ module.exports = function (eleventyConfig) {
   // Crea una collezione di tag con conteggi
   eleventyConfig.addCollection("tagList", function(collection) {
     let tagSet = {};
-    
+
     collection.getAll().forEach(function(item) {
       if ("tags" in item.data) {
         let tags = item.data.tags;
-        
+
         tags.filter(tag => !["posts", "all", "tagList"].includes(tag)).forEach(tag => {
           if (!tagSet[tag]) {
             tagSet[tag] = [];
@@ -38,7 +44,7 @@ module.exports = function (eleventyConfig) {
         });
       }
     });
-    
+
     return tagSet;
   });
 
@@ -55,13 +61,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("dichotomize", function(collection) {
     let result = {};
-    
+
     for (let key in collection) {
       if (key !== "all") {
         result[key] = collection[key];
       }
     }
-    
+
     return result;
   });
 
