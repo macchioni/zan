@@ -8,6 +8,10 @@ tags:
   - enshittification
   - blogging
   - information
+  - alpha
+  - beta
+  - gamma
+  - delta
 ---
 
 ![Shepard Fairey](https://doagahehoc242.cloudfront.net/uploads/artists/1/d0b2d433_6-eyes-wide-open-canvas-500.webp)
