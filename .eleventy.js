@@ -80,3 +80,14 @@ module.exports = function (eleventyConfig) {
     }
   };
 };
+
+// Aggiungi questo dopo gli altri addFilter/addPlugin
+eleventyConfig.addShortcode("buildTime", () => {
+  return new Date().toLocaleString("it-IT", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+});
