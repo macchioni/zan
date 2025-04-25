@@ -17,7 +17,7 @@ title: PM
     <div class="grid-4-col">
       {% for tag, posts in collections | dichotomize %}
         {% if tag != "all" and tag != "posts" %}
-          <a href="/tags/{{ tag }}/" class="tag">
+          <a href="/tags/{{ tag }}/" class="post-tag">
             {{ tag }} <sup>{{ posts.length }}</sup>
           </a>
         {% endif %}
