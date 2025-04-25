@@ -21,7 +21,7 @@ Instagram is the most polished billboard ever made. A perennial show off of bran
 
 TikTok... TikTok seems to know me more than I do, bringing me around the world and making my hours pass like seconds. 
 
-X has become a successful propaganda machine, is algorithms driven by a man that may be a genius l, but that's also too close to the power to be trusted.
+X has become a successful propaganda machine, is algorithms driven by a man that may be a genius, but that's also too close to the power to be trusted.
 
 We're starting to play with AI. How to simply put it? It's a miracle, every query reminding us how complex we think we are and how predictable we actually are. 
 AI will multiply our creative possibilities, sure, but will be the largest waste producing technology ever made. 
