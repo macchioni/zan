@@ -1,12 +1,17 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-  // Aggiunge il filtro "readableDate" per formattare le date nei template Nunjucks
+  // Filtro "readableDate": formato semplice (es. 25 Apr 2025)
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
   });
 
-  // Configura le cartelle di input/output
+  // Filtro "formatDate": formato personalizzabile (default: yyyy-MM-dd)
+  eleventyConfig.addFilter("formatDate", (dateObj, format = "yyyy-MM-dd") => {
+    return DateTime.fromJSDate(dateObj).toFormat(format);
+  });
+
+  // Directory di input/output
   return {
     dir: {
       input: "src",
