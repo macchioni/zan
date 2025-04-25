@@ -1,6 +1,7 @@
 ---
+layout: layouts/post.njk
 title: "Il Titolo del Mio Post"
-date: 2025-04-25
+date: 2025-0034-25
 description: "Questa è la descrizione del mio post che apparirà come meta description e in altri contesti."
 tags:
   - esempio
@@ -19,13 +20,13 @@ const hello = "Ciao mondo!";
 console.log(hello);
 ```
 
-> Questa è una citazione che potrebbe essere rilevante per il tema del post.
+> Questa è una citazione cheuna citazione che potrebbe e potrebbe esseruna citazione che potrebbe euna citazione che potrebbe euna citazione che potrebbe ee rilevante per il tema del post.
 
 ### Sottosezione
 
 Le immagini vengono visualizzate con uno stile particolare che si adatta al tema generale del sito:
 
-![Descrizione dell'immagine](/assets/images/example.jpg)
+![zendaya](https://secretbreakfast.com/content/images/size/w2000/2025/04/490593294_18508041499007474_4762891619782554613_n.jpg)
 *Questa è una didascalia per l'immagine sopra*
 
 ## Conclusione
