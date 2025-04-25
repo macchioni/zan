@@ -9,9 +9,9 @@
 
 :root {
     font-size: 62.5%;
-    --font-ui: sohne, system-ui, -apple-system, BlinkMacSystemFont, Helvetica,
+    --font-ui: system-ui, -apple-system, BlinkMacSystemFont, Helvetica,
         Arial, sans-serif;
-    --font-text: Tiempos, Iowan Old Style, Georgia, Times New Roman, serif;
+    --font-text: Georgia, Times New Roman, serif;
     --font-aux: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
         Consolas, "DejaVu Sans Mono", monospace;
     --section-padding: 10rem;
