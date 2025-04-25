@@ -28,14 +28,17 @@
   </div>
   
   <hr>
-  
+  {% if collections and collections.posts and page %}
   <div class="pagination">
     <div class="grid-2-across">
-      {% if collections.posts | getPreviousCollectionItem %}
+      {% set prevPost = collections.posts | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+
+      {% if prevPost %}
         <div>
           <p>
-            ← <a href="{{ collections.posts | getPreviousCollectionItem(page).url }}">
-              <span>{{ collections.posts | getPreviousCollectionItem(page).data.title }}</span>
+            ← <a href="{{ prevPost.url }}">
+              <span>{{ prevPost.data.title }}</span>
             </a>
           </p>
         </div>
@@ -43,11 +46,11 @@
         <div></div>
       {% endif %}
       
-      {% if collections.posts | getNextCollectionItem %}
+      {% if nextPost %}
         <div style="text-align: right;">
           <p>
-            <a href="{{ collections.posts | getNextCollectionItem(page).url }}">
-              <span>{{ collections.posts | getNextCollectionItem(page).data.title }}</span>
+            <a href="{{ nextPost.url }}">
+              <span>{{ nextPost.data.title }}</span>
             </a> →
           </p>
         </div>
@@ -56,5 +59,10 @@
       {% endif %}
     </div>
   </div>
+{% endif %}
+
+ 
+
+
 </article>
 {% endblock %}
