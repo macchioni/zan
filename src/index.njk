@@ -1,17 +1,17 @@
 ---
 layout: layouts/base.njk
-title: Gabriele Pellegrini
+title: PM
 ---
 
 <div class="container">
   <section class="intro">
     <h1>{{ title }}</h1>
-    <p>Breve descrizione su di te e il tuo lavoro. Una presentazione professionale che descriva chi sei e cosa fai.</p>
+    <p>Elit ut irure sit mollit non fugiat. Officia labore pariatur esse do dolore id aliqua anim dolore in sunt tempor. Adipisicing esse commodo eu esse in non reprehenderit. Labore do dolor do sunt culpa fugiat aliquip in esse. Fugiat amet nulla do aute non ullamco proident labore quisElit ut irure sit mollit non fugiat. Officia labore pariatur esse do dolore id aliqua anim dolore in sunt tempor. Adipisicing esse commodo eu esse in non reprehenderit. Labore do dolor do sunt culpa fugiat aliquip in esse. Fugiat amet nulla do aute non ullamco proident labore quis labore quis aute commodo sint. labore quis aute commodo sint.</p>
   </section>
 
-  <section class="tags-section">
-    <h2>Tags</h2>
-    <div class="tags-list">
+<section class="topics">
+    <h4>Topics</h4>
+    <div class="grid-4-col">
       {% for tag, posts in collections | dichotomize %}
         {% if tag != "all" and tag != "posts" %}
           <a href="/tags/{{ tag }}/" class="tag">
@@ -23,7 +23,7 @@ title: Gabriele Pellegrini
   </section>
 
 <section>
-    <h2>Recent Posts</h2>
+    <h4>More</h4>
   <ul class="journal-list">
     {% for post in collections.posts | reverse %}
     <a href="{{ post.url }}">
@@ -38,7 +38,7 @@ title: Gabriele Pellegrini
     </a>
     {% endfor %}
   </ul>
-      <p class="more-link"><a href="/journal/">View all posts →</a></p>
+      <p class="more-link"><a href="/journal/">See all from the journal &rarr;</a></p>
 </section>
 
 
