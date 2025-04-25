@@ -3,12 +3,12 @@ layout: layouts/base.njk
 ---
 
 <article class="post">
-  <header class="post-header">
+  <section class="title-desc">
     <h1 class="post-title">{{ title }}</h1>
     {% if description %}
       <h2 class="post-description">{{ description }}</h2>
     {% endif %}
-  </header>
+  </section>
 
   <div class="post-content">
     {{ content | safe }}
@@ -20,13 +20,13 @@ layout: layouts/base.njk
     <time datetime="{{ page.date | formatDate }}">{{ page.date | readableDate }}</time>
     &sdot; 
     {% if tags %}
-      <div class="post-tags">
+      <span class="post-tags">
         {% for tag in tags %}
           {% if tag != "posts" %}
-            <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+            <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>{% if not loop.last %}, {% endif %}
           {% endif %}
         {% endfor %}
-      </div>
+      </span>
     {% endif %}
   </p>
 </section>
