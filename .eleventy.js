@@ -8,6 +8,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("formatDate", (dateObj, format = "yyyy-MM-dd") => {
     return DateTime.fromJSDate(dateObj).toFormat(format);
   });
+
+  // Crea una collezione di tag con conteggi
+eleventyConfig.addCollection("tagList", function(collection) {
+  let tagSet = {};
+  
+  collection.getAll().forEach(function(item) {
+    if ("tags" in item.data) {
+      let tags = item.data.tags;
+      
+      tags.filter(tag => tag !== "posts" && tag !== "all").forEach(tag => {
+        if (!tagSet[tag]) {
+          tagSet[tag] = [];
+        }
+        tagSet[tag].push(item);
+      });
+    }
+  });
+  
+  return tagSet;
+});
   
   // Aggiungi questo nuovo filtro
   eleventyConfig.addFilter("slice", function(array, start, end) {
