@@ -1,7 +1,48 @@
 {% extends "layouts/base.njk" %}
+
 {% block content %}
-  <article>
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
-  </article>
+<section id="latest">
+  <a href="{{ collections.posts | reverse | first.url }}">
+    <h1>{{ collections.posts | reverse | first.data.title }}</h1>
+  </a>
+  <h2 class="small-caps">{{ collections.posts | reverse | first.data.description }}</h2>
+  <div class="show-link-underlines">
+    {{ collections.posts | reverse | first.templateContent | safe }}
+  </div>
+  <div class="continue">
+    <a href="{{ collections.posts | reverse | first.url }}">Continua a leggere →</a>
+  </div>
+</section>
+
+<section>
+  <h2>Journal</h2>
+  <ul class="journal-list">
+    {% for post in collections.posts | reverse | limit(5) %}
+      {% if loop.index0 > 0 %}
+      <a href="{{ post.url }}">
+        <li>
+          <span>{{ post.data.title }}</span>
+          <hr>
+          <small>{{ post.date | formatDate }}</small>
+          {% if post.data.description %}
+            <div class="post-desc">{{ post.data.description }}</div>
+          {% endif %}
+        </li>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <p class="see-all">
+    <a href="/journal/">Vedi tutti gli articoli →</a>
+  </p>
+</section>
+
+<section>
+  <h2>Topics</h2>
+  <div class="topics">
+    {% for tag in collections.tagList %}
+      <a href="/tags/{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</section>
 {% endblock %}

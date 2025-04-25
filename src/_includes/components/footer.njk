@@ -1,5 +1,14 @@
 <footer>
-  <div class="footer-content">
-    <p>&copy; 2025 {{ site.author.name }}</p>
+  <div class="flex-between">
+    <p>
+      <img src="/assets/images/logo-small.svg" alt="Logo piccolo">
+      <span class="copyright">© {{ '' | date | formatDate('yyyy') }} Il Mio Nome</span>
+    </p>
+    <p>
+      Questo è il mio sito personale dove condivido pensieri, progetti e collegamenti interessanti. Realizzato con <a href="https://www.11ty.dev/">11ty</a> e tanto caffè.
+    </p>
+    <p class="top">
+      <a href="#">Torna su</a>
+    </p>
   </div>
 </footer>

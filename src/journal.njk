@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Journal
+pageClass: journal
+---
+
+<section>
+  <h1>Journal</h1>
+  <ul class="journal-list">
+    {% for post in collections.posts | reverse %}
+    <a href="{{ post.url }}">
+      <li>
+        <span>{{ post.data.title }}</span>
+        <hr>
+        <small>{{ post.date | formatDate }}</small>
+        {% if post.data.description %}
+          <div class="post-desc">{{ post.data.description }}</div>
+        {% endif %}
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,26 +1,28 @@
 module.exports = function(eleventyConfig) {
-  // Passa attraverso copie dirette
+  // Passa i file statici direttamente
   eleventyConfig.addPassthroughCopy("src/assets");
   
-  // Filtri di data
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return new Date(dateObj).toLocaleDateString('it-IT', {
-      day: 'numeric',
+  // Shortcode per la data formattata
+  eleventyConfig.addShortcode("formattedDate", function(date) {
+    return new Date(date).toLocaleDateString('it-IT', {
+      year: 'numeric',
       month: 'long',
-      year: 'numeric'
+      day: 'numeric'
     });
   });
-
-  // Aggiungi questo filtro per l'anno corrente
-  eleventyConfig.addFilter("currentYear", () => {
-    return new Date().getFullYear();
+  
+  // Filtro per limitare stringhe
+  eleventyConfig.addFilter("limit", function(array, limit) {
+    return array.slice(0, limit);
   });
-
-  // Collezioni
-  eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse();
+  
+  // Filtro per troncare stringhe
+  eleventyConfig.addFilter("truncate", function(text, length) {
+    if (text.length <= length) return text;
+    return text.substring(0, length) + "...";
   });
-
+  
+  // Configura la directory per i template nunjucks
   return {
     dir: {
       input: "src",
@@ -28,9 +30,8 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    templateFormats: ["md", "njk", "html"],
+    templateFormats: ["njk", "md", "html"],
     markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk"
+    htmlTemplateEngine: "njk"
   };
 };

@@ -1,0 +1,10 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section>
+  <h1>{{ title }}</h1>
+  <div class="show-link-underlines">
+    {{ content | safe }}
+  </div>
+</section>
+{% endblock %}

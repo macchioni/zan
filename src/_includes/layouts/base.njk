@@ -1,22 +1,42 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" color-mode="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <title>{% if title %}{{ title }} | {% endif %}Il Mio Sito</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Il mio sito personale{% endif %}">
 </head>
-<body>
-  <div class="container">
-    <div class="horizontal-line"></div>
-    {% include "components/header.njk" %}
-    <main>
-      {{ content | safe }}
-    </main>
-    {% include "components/footer.njk" %}
-  </div>
+<body class="{{ pageClass }}">
+  {% include "partials/header.njk" %}
   
-  <script src="/assets/js/theme-switcher.js"></script>
+  <main>
+    {{ content | safe }}
+  </main>
+  
+  {% include "partials/footer.njk" %}
+  
+  <script>
+    // Script per gestire il color mode switcher
+    document.addEventListener('DOMContentLoaded', () => {
+      const colorModeBtn = document.querySelector('.color-mode__btn');
+      
+      colorModeBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const currentMode = html.getAttribute('color-mode');
+        const newMode = currentMode === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('color-mode', newMode);
+        localStorage.setItem('color-mode', newMode);
+      });
+      
+      // Ripristina il tema salvato
+      const savedMode = localStorage.getItem('color-mode');
+      if (savedMode) {
+        document.documentElement.setAttribute('color-mode', savedMode);
+      }
+    });
+  </script>
 </body>
 </html>
