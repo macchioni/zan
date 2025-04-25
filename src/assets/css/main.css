@@ -1,5 +1,18 @@
-/* Reset e base */
 :root {
+    font-size: 62.5%;
+    --font-ui: sohne, system-ui, -apple-system, BlinkMacSystemFont, Helvetica,
+        Arial, sans-serif;
+    --font-text: Tiempos, Iowan Old Style, Georgia, Times New Roman, serif;
+    --font-aux: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+        Consolas, "DejaVu Sans Mono", monospace;
+    --section-padding: 10rem;
+    --section-padding-sm: 4rem;
+    --border-radius-img: 4px;
+    --site-width: 600px;
+    --site-max-width: 1600px;
+}
+
+:root[color-mode="light"] {
     --color-bg: #f9f5ee;
     --color-default: #222222;
     --color-link: #111111;
@@ -15,8 +28,8 @@
     --gradient-bg-img: linear-gradient(180deg, #eeece1 0%, #e7dad4 100%);
     --photo-square-bg: #fefefe;
 }
-  
-  [data-theme="dark"] {
+
+:root[color-mode="dark"] {
     --color-bg: #212121;
     --color-default: #cccccc;
     --color-link: #dcdcdc;
