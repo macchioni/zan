@@ -1,6 +1,10 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+  // Aggiungi il plugin RSS qui, all'interno della funzione
+  eleventyConfig.addPlugin(pluginRss);
+  
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
   });
@@ -9,25 +13,34 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toFormat(format);
   });
 
-  // Crea una collezione di tag con conteggi
-eleventyConfig.addCollection("tagList", function(collection) {
-  let tagSet = {};
-  
-  collection.getAll().forEach(function(item) {
-    if ("tags" in item.data) {
-      let tags = item.data.tags;
-      
-      tags.filter(tag => tag !== "posts" && tag !== "all").forEach(tag => {
-        if (!tagSet[tag]) {
-          tagSet[tag] = [];
-        }
-        tagSet[tag].push(item);
-      });
-    }
+  // Collezioni per i feed RSS
+  eleventyConfig.addCollection("journal", function(collection) {
+    return collection.getFilteredByGlob("src/journal/*.md").reverse();
   });
-  
-  return tagSet;
-});
+
+  eleventyConfig.addCollection("links", function(collection) {
+    return collection.getFilteredByGlob("src/links/*.md").reverse();
+  });
+
+  // Crea una collezione di tag con conteggi
+  eleventyConfig.addCollection("tagList", function(collection) {
+    let tagSet = {};
+    
+    collection.getAll().forEach(function(item) {
+      if ("tags" in item.data) {
+        let tags = item.data.tags;
+        
+        tags.filter(tag => tag !== "posts" && tag !== "all").forEach(tag => {
+          if (!tagSet[tag]) {
+            tagSet[tag] = [];
+          }
+          tagSet[tag].push(item);
+        });
+      }
+    });
+    
+    return tagSet;
+  });
   
   // Aggiungi questo nuovo filtro
   eleventyConfig.addFilter("slice", function(array, start, end) {
@@ -53,6 +66,11 @@ eleventyConfig.addCollection("tagList", function(collection) {
     
     return result;
   });
+
+  // Filtri necessari per i feed RSS
+  eleventyConfig.addFilter("htmlToAbsoluteUrls", require("@11ty/eleventy-plugin-rss").htmlToAbsoluteUrls);
+  eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+  eleventyConfig.addFilter("getNewestCollectionItemDate", pluginRss.getNewestCollectionItemDate);
 
   return {
     dir: {
