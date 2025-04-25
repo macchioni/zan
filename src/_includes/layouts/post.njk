@@ -1,68 +1,47 @@
-{% extends "layouts/base.njk" %}
-{% set pageClass = "journal_post" %}
+---
+layout: layouts/base.njk
+---
 
-{% block content %}
-<article>
-  <div class="title-desc">
-  <h1>{{ page.data.title }}</h1>
-  {% if page.data.description %}
-    <h2>{{ page.data.description }}</h2>
-  {% endif %}
-</div>
-  
-  <div class="metadata">
-    <p>Published on {{ page.date | formatDate }} 
-    {% if tags and tags.length > 0 %}
-      • 
-      {% for tag in tags %}
-        {% if tag != "posts" %}
-        <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-        {% endif %}
-      {% endfor %}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ title }}</h1>
+    {% if description %}
+      <p class="post-description">{{ description }}</p>
     {% endif %}
-    </p>
-  </div>
-  
-  <div class="show-link-underlines">
-    {{ content | safe }}
-  </div>
-  
-  <hr>
-  {% if collections and collections.posts and page %}
-  <div class="pagination">
-    <div class="grid-2-across">
-      {% set prevPost = collections.posts | getPreviousCollectionItem(page) %}
-      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-
-      {% if prevPost %}
-        <div>
-          <p>
-            ← <a href="{{ prevPost.url }}">
-              <span>{{ prevPost.data.title }}</span>
-            </a>
-          </p>
+    <div class="post-meta">
+      <time datetime="{{ page.date | formatDate }}">{{ page.date | readableDate }}</time>
+      {% if tags %}
+        <div class="post-tags">
+          {% for tag in tags %}
+            {% if tag != "posts" %}
+              <a href="/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+            {% endif %}
+          {% endfor %}
         </div>
-      {% else %}
-        <div></div>
-      {% endif %}
-      
-      {% if nextPost %}
-        <div style="text-align: right;">
-          <p>
-            <a href="{{ nextPost.url }}">
-              <span>{{ nextPost.data.title }}</span>
-            </a> →
-          </p>
-        </div>
-      {% else %}
-        <div></div>
       {% endif %}
     </div>
+  </header>
+
+  <div class="post-content">
+    {{ content | safe }}
   </div>
-{% endif %}
-
- 
-
-
 </article>
-{% endblock %}
+
+<nav class="post-navigation">
+  {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+  {%- set nextPost = collections.posts | getNextCollectionItem %}
+
+  <div class="post-nav-links">
+    {% if previousPost %}
+      <div class="post-nav-prev">
+        <a href="{{ previousPost.url }}" rel="prev">← {{ previousPost.data.title }}</a>
+      </div>
+    {% endif %}
+
+    {% if nextPost %}
+      <div class="post-nav-next">
+        <a href="{{ nextPost.url }}" rel="next">{{ nextPost.data.title }} →</a>
+      </div>
+    {% endif %}
+  </div>
+</nav>
