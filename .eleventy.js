@@ -11,12 +11,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/assets");
 
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("blog/posts/*.md").reverse();
+  });
+
   return {
     dir: {
       input: "src",
-      includes: "_includes", // 👈 importante!
-      layouts: "layouts",    // 👈 questo serve perché i layout sono in _includes/layouts
-      output: "_site"
+      output: "_site",
+      includes: "_includes"
     }
-  };  
+  };
 };
