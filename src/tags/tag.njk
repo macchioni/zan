@@ -8,12 +8,23 @@ pagination:
 permalink: "/tags/{{ tag | slug }}/"
 eleventyComputed:
   title: "Posts tagged '{{ tag }}'"
+pageClass: journal
 ---
 
-<h1>You're looking for more “{{ tag }}”</h1>
-
-<ul>
-  {% for item in collections[tag] %}
-    <li><a href="{{ item.url }}">{{ item.data.title }}</a> - {{ item.date | readableDate }}</li>
-  {% endfor %}
-</ul>
+<section>
+  <h1>Articoli con il tag “{{ tag }}”</h1>
+  <ul class="journal-list">
+    {% for post in collections[tag] %}
+    <a href="{{ post.url }}">
+      <li>
+        <span>{{ post.data.title }}</span>
+        <hr>
+        <small>{{ post.date | formatDate }}</small>
+        {% if post.data.description %}
+          <div class="post-desc">{{ post.data.description }}</div>
+        {% endif %}
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</section>
