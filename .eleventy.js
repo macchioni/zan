@@ -2,7 +2,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-  // Aggiungi il plugin RSS qui, all'interno della funzione
+  // Aggiungi il plugin RSS
   eleventyConfig.addPlugin(pluginRss);
   
   eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -41,8 +41,8 @@ module.exports = function (eleventyConfig) {
     
     return tagSet;
   });
-  
-  // Aggiungi questo nuovo filtro
+
+  // Filtro per affettare array
   eleventyConfig.addFilter("slice", function(array, start, end) {
     return array.slice(start, end);
   });
@@ -56,9 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dichotomize", function(collection) {
     let result = {};
     
-    // Itera su tutte le collezioni
     for (let key in collection) {
-      // Salta la collezione "all"
       if (key !== "all") {
         result[key] = collection[key];
       }
@@ -67,10 +65,21 @@ module.exports = function (eleventyConfig) {
     return result;
   });
 
-  // Filtri necessari per i feed RSS
-  eleventyConfig.addFilter("htmlToAbsoluteUrls", require("@11ty/eleventy-plugin-rss").htmlToAbsoluteUrls);
+  // Filtri RSS
+  eleventyConfig.addFilter("htmlToAbsoluteUrls", pluginRss.htmlToAbsoluteUrls);
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addFilter("getNewestCollectionItemDate", pluginRss.getNewestCollectionItemDate);
+
+  // Shortcode per buildTime
+  eleventyConfig.addShortcode("buildTime", () => {
+    return new Date().toLocaleString("it-IT", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  });
 
   return {
     dir: {
@@ -80,14 +89,3 @@ module.exports = function (eleventyConfig) {
     }
   };
 };
-
-// Aggiungi questo dopo gli altri addFilter/addPlugin
-eleventyConfig.addShortcode("buildTime", () => {
-  return new Date().toLocaleString("it-IT", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  });
-});
