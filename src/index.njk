@@ -10,15 +10,17 @@ title: Gabriele Pellegrini
   </section>
 
   <section class="tags-section">
-  <h2>Tags</h2>
-  <div class="tags-list">
-    {% for tag in collections.tagList %}
-      <a href="/tags/{{ tag }}/" class="tag">
-        {{ tag }} <sup>{{ collections.tagList[tag].length }}</sup>
-      </a>
-    {% endfor %}
-  </div>
-</section>
+    <h2>Tags</h2>
+    <div class="tags-list">
+      {% for tag, posts in collections | dichotomize %}
+        {% if tag != "all" and tag != "posts" %}
+          <a href="/tags/{{ tag }}/" class="tag">
+            {{ tag }} <sup>{{ posts.length }}</sup>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
 
   <section class="posts-section">
     <h2>Recent Posts</h2>
