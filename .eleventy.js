@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("blog/posts/*.md").reverse();
+    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse();
   });
 
   return {
