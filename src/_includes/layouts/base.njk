@@ -4,12 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} | {% endif %}Il Mio Sito</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
-  <link rel="alternate" href="/journal/feed.xml" type="application/atom+xml" title="Feed RSS Journal">
-<link rel="alternate" href="/links/feed.xml" type="application/atom+xml" title="Feed RSS Links">
   <meta name="description" content="{% if description %}{{ description }}{% else %}Il mio sito personale{% endif %}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png"><!-- DA FARE -->
+  <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32"><!-- DA FARE -->
+  <link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml"><!-- DA FARE --> 
+  <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="alternate" href="/journal/feed.xml" type="application/atom+xml" title="Feed RSS Journal">
+  <link rel="alternate" href="/links/feed.xml" type="application/atom+xml" title="Feed RSS Links">
+  <!-- Open Graph / Mastodon -->
+  <meta name="fediverse:creator" content="@piero@c.im">		
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+  <meta property="og:site_name" content="Piero✱">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:image:alt" content="">
+  <meta name="twitter:site" content="@pieromacchioni">
+  <meta name="twitter:creator" content="@pieromacchioni">
 </head>
+
 <body class="{{ pageClass }}">
   {% include "components/header.njk" %}
   
