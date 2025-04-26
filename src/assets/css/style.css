@@ -1486,31 +1486,33 @@ button.color-mode__btn {
     }
 }
 
+/* --- Topics tags --- */
 .topics-list {
-    list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
   }
   
   .topics-list li {
     margin: 0;
   }
   
-  .topics-list a {
-    display: inline-block;
-    padding: 0.3em 0.8em;
-    border: 1px solid var(--text-color);
+  .topics-list .tag {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 0.3rem 0.7rem;
     border-radius: 9999px;
+    font-size: 0.75rem;
+    color: #374151;
     text-decoration: none;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s;
   }
   
-  .topics-list a:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
+  .topics-list .tag:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+    border-color: #d1d5db;
   }
-  
