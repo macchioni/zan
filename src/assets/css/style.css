@@ -1508,5 +1508,5 @@ button.color-mode__btn {
     font-size: 0.75em;
     color: var(--color-secondary); /* Colore secondario per il numero */
     vertical-align: super; /* Per mettere il numero come apice */
-    margin-left: 5px;
+    margin-left: 3px;
   }
