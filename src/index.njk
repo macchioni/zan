@@ -19,7 +19,9 @@ title: PM
   <ul class="topics-list">
     {% for tag, posts in collections.tagList %}
       <li>
-        <a class="tag" href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+        <a class="tag" href="/tags/{{ tag | slug }}/">{{ tag }}
+          <span class="count">{{ posts | length }}</span> <!-- Mostra il numero di occorrenze -->
+        </a>
       </li>
     {% endfor %}
   </ul>

@@ -1488,31 +1488,25 @@ button.color-mode__btn {
 
 /* --- Topics tags --- */
 .topics-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    margin: 1rem 0;
   }
   
   .topics-list li {
-    margin: 0;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
   }
   
-  .topics-list .tag {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    padding: 0.3rem 0.7rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    color: #374151;
+  .topics-list a {
     text-decoration: none;
-    transition: all 0.3s;
+    color: var(--color-default); /* Colore del testo del tag */
+    font-weight: bold;
   }
   
-  .topics-list .tag:hover {
-    background-color: #e5e7eb;
-    color: #111827;
-    border-color: #d1d5db;
+  .topics-list .count {
+    font-size: 0.75em;
+    color: var(--color-secondary); /* Colore secondario per il numero */
+    vertical-align: super; /* Per mettere il numero come apice */
+    margin-left: 5px;
   }
