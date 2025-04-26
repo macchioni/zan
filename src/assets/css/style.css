@@ -1501,7 +1501,7 @@ button.color-mode__btn {
   .topics-list a {
     text-decoration: none;
     color: var(--color-default); /* Colore del testo del tag */
-    font-weight: bold;
+    font-weight: normal;
   }
   
   .topics-list .count {
