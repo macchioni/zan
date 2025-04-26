@@ -17,7 +17,7 @@ title: PM
 <section>
   <h2>Topics</h2>
   <ul class="topics-list">
-    {% for tag in collections.tagList | sort %}
+    {% for tag, posts in collections.tagList %}
       <li>
         <a class="tag" href="/tags/{{ tag | slug }}/">{{ tag }}</a>
       </li>
