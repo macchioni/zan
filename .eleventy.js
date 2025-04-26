@@ -28,7 +28,7 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob("src/links/*.md").reverse();
   });
 
-  // Crea una collezione di tag con conteggi
+  // Crea una collezione di tag con conteggi, escludendo quelli finti
   eleventyConfig.addCollection("tagList", function(collection) {
     let tagSet = {};
 
@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
       if ("tags" in item.data) {
         let tags = item.data.tags;
 
-        tags.filter(tag => !["posts", "all", "tagList"].includes(tag)).forEach(tag => {
+        tags.filter(tag => !["posts", "all", "tagList", "journal", "links"].includes(tag)).forEach(tag => {
           if (!tagSet[tag]) {
             tagSet[tag] = [];
           }
@@ -91,7 +91,3 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
       output: "_site",
-      includes: "_includes"
-    }
-  };
-};
