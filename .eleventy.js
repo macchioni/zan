@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig) {
     if (!value) return value;
 
     // Funzione per sostituire apostrofi solo fuori da tag HTML
-    return value.replace(/(>)([^<]*?)('/g, "$1$2’");
+    return value.replace(/(>)([^<]*?)('|’)/g, "$1$2’");
   });
 
   // Filtro per slug URL-friendly
