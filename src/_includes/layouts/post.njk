@@ -4,15 +4,15 @@ layout: layouts/base.njk
 
 <article class="journal_post">
   <section class="title-desc">
-    <h1>{{ title | smartApostrophe }}</h1>
+    <h1>{{ title | smartApostropheSafe }}</h1>
     {% if description %}
-      <h2>{{ description | smartApostrophe }}</h2>
+      <h2>{{ description | smartApostropheSafe }}</h2>
     {% endif %}
   </section>
 
   <div class="show-link-underlines">
     <div class="post-content">
-      {{ content | safe | smartApostrophe }}
+      {{ content | safe }}
     </div>
   </div>
 </article>

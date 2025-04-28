@@ -6,10 +6,12 @@ module.exports = function(eleventyConfig) {
   // Aggiungi il plugin RSS
   eleventyConfig.addPlugin(pluginRss);
 
-  // Filtro per apostrofo tipografico
-  eleventyConfig.addFilter("smartApostrophe", function(value) {
+  // Filtro per apostrofi curvi, ignorando il contenuto HTML
+  eleventyConfig.addFilter("smartApostropheSafe", function(value) {
     if (!value) return value;
-    return value.replace(/'/g, "’");
+
+    // Funzione per sostituire apostrofi solo fuori da tag HTML
+    return value.replace(/(>)([^<]*?)('/g, "$1$2’");
   });
 
   // Filtro per slug URL-friendly
