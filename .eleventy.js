@@ -2,11 +2,11 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 const slugify = require("slugify");
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   // Aggiungi il plugin RSS
   eleventyConfig.addPlugin(pluginRss);
 
-module.exports = function(eleventyConfig) {
+  // Filtro per apostrofo tipografico
   eleventyConfig.addFilter("smartApostrophe", function(value) {
     if (!value) return value;
     return value.replace(/'/g, "’");
