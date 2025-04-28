@@ -6,6 +6,12 @@ module.exports = function (eleventyConfig) {
   // Aggiungi il plugin RSS
   eleventyConfig.addPlugin(pluginRss);
 
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addFilter("smartApostrophe", function(value) {
+    if (!value) return value;
+    return value.replace(/'/g, "’");
+  });
+
   // Filtro per slug URL-friendly
   eleventyConfig.addFilter("slug", (input) => {
     return slugify(input, { lower: true, remove: /[*+~.()'"!:@]/g });
