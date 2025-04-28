@@ -51,3 +51,20 @@ layout: layouts/base.njk
     {% endif %}
   </div>
 </nav>
+
+<section><nav class="pagination" aria-labelledby="my-pagination">
+  
+    <a class="pagination-item prev">{% if previousPost %}
+      <div class="post-nav-prev">
+        <a href="{{ previousPost.url }}" rel="prev">← {{ previousPost.data.title }}</a>
+      </div>
+    {% endif %}</span></a>
+  
+    <a class="pagination-item next">{% if nextPost %}
+      <div class="post-nav-next">
+        <a href="{{ nextPost.url }}" rel="next">{{ nextPost.data.title }} →</a>
+      </div>
+    {% endif %}</span></a>
+  
+</nav>
+</section>
