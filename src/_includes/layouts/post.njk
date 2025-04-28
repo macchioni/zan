@@ -1,17 +1,19 @@
 ---
 layout: layouts/base.njk
 ---
+
 <article class="journal_post">
-<section class="title-desc">
+  <section class="title-desc">
     <h1>{{ title }}</h1>
     {% if description %}
-    <h2>{{ description }}</h2>
+      <h2>{{ description }}</h2>
     {% endif %}
-</section>
+  </section>
 
-<div class="show-link-underlines">
-  <div class="post-content">
-    {{ content | safe }}
+  <div class="show-link-underlines">
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
   </div>
 </article>
 
@@ -29,42 +31,24 @@ layout: layouts/base.njk
       </span>
     {% endif %}
   </p>
-  </div>
 </section>
-           
 
-<nav class="post-navigation">
-  {%- set previousPost = collections.posts | getPreviousCollectionItem %}
-  {%- set nextPost = collections.posts | getNextCollectionItem %}
+{# Pagination #}
+{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 
-  <div class="post-nav-links">
+<section>
+  <nav class="pagination" aria-labelledby="my-pagination">
     {% if previousPost %}
-      <div class="post-nav-prev">
-        <a href="{{ previousPost.url }}" rel="prev">← {{ previousPost.data.title }}</a>
-      </div>
+      <a class="pagination-item prev" href="{{ previousPost.url }}" rel="prev">
+        Prev<br><span>{{ previousPost.data.title }}</span>
+      </a>
     {% endif %}
-
+    
     {% if nextPost %}
-      <div class="post-nav-next">
-        <a href="{{ nextPost.url }}" rel="next">{{ nextPost.data.title }} →</a>
-      </div>
+      <a class="pagination-item next" href="{{ nextPost.url }}" rel="next">
+        Next<br><span>{{ nextPost.data.title }}</span>
+      </a>
     {% endif %}
-  </div>
-</nav>
-
-<section><nav class="pagination" aria-labelledby="my-pagination">
-  
-    <a class="pagination-item prev">{% if previousPost %}
-      <div class="post-nav-prev">
-        <a href="{{ previousPost.url }}" rel="prev">← {{ previousPost.data.title }}</a>
-      </div>
-    {% endif %}</span></a>
-  
-    <a class="pagination-item next">{% if nextPost %}
-      <div class="post-nav-next">
-        <a href="{{ nextPost.url }}" rel="next">{{ nextPost.data.title }} →</a>
-      </div>
-    {% endif %}</span></a>
-  
-</nav>
+  </nav>
 </section>
