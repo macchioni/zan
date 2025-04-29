@@ -8,6 +8,14 @@ title: Now
 <span><a class="rss-feed" href="href="/links/feed.xml">Links RSS</a></span>
 </section>
 
+
+<ul class="links-list">
+  {% for link in collections.links %}
+    <li>✺ <a href="{{ link.data.url }}">{{ link.data.title }}</a></li>
+  {% endfor %}
+</ul>
+
+
 <section class="show-link-underlines">
   <ul><li>
       <p><span>&#10042; 135</span><br>

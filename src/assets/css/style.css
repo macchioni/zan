@@ -1472,3 +1472,12 @@ button.color-mode__btn {
     vertical-align: super; /* Per mettere il numero come apice */
     margin-left: 1px;
   }
+
+  .links-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .links-list li {
+    margin-bottom: 1rem; /* Aggiunge un po' di spazio tra gli elementi */
+  }
