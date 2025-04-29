@@ -1473,11 +1473,17 @@ button.color-mode__btn {
     margin-left: 1px;
   }
 
-  .links-list {
-    list-style: none;
-    padding-left: 0;
+  ul.links-list {
+    list-style-type: none; /* Rimuove i bullet points */
+    padding-left: 0; /* Rimuove l'indentazione */
   }
   
-  .links-list li {
-    margin-bottom: 1rem; /* Aggiunge un po' di spazio tra gli elementi */
+  ul.links-list li {
+    display: inline-block; /* Mostra gli elementi della lista in linea */
+    margin-right: 1rem; /* Aggiunge spazio tra gli elementi */
+  }
+  
+  ul.links-list li::before {
+    content: "✺ "; /* Aggiunge il simbolo personalizzato */
+    margin-right: 0.5rem; /* Distanza tra simbolo e link */
   }
