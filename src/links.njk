@@ -13,7 +13,7 @@ title: Links
   {% for link in collections.links %}
     <article>
       <h3>
-        <span>&#10042; {{ total - loop.index0 }}</span>
+        <span>✱ {{ total - loop.index0 }}</span><br>
         <a href="{{ link.data.url }}">{{ link.data.title }}</a>
       </h3>
       <div class="description">
