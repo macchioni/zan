@@ -34,6 +34,11 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("src/journal/*.md").reverse();
   });
 
+  // Collezione posts
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse();
+  });
+
   // Collezione links
   eleventyConfig.addCollection("links", function (collection) {
     return collection.getFilteredByGlob("src/links/*.md").reverse();
