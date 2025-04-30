@@ -7,7 +7,7 @@ pageClass: journal
 <section>
   <h1>Journal</h1>
   <ul class="journal-list">
-    {% for post in collections.posts | reverse %}
+    {% for post in collections.posts %}
     <a href="{{ post.url }}">
       <li>
         <span>{{ post.data.title }}</span>
