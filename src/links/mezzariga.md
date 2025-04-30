@@ -1,7 +1,7 @@
 ---
 title: "Mezza Riga, la nuova newsletter sul tennis di Simone Spetia e Gianluca Di Tommaso 🎾"
 url: "https://mezzariga.tennis.nightreview.it"
-date: 2025-04-30
+date: 2025-04-29
 tags: 
   - newsletter
   - tennis
