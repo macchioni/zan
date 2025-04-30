@@ -13,8 +13,9 @@ tags:
 *Sul numero 15/2021 di Grazia abbiamo chiesto a 20 grandi nomi italiani internazionali di raccontare la loro ricetta per ricostruire il futuro dopo la pandemia. 
 Questo è quello che mi ha detto lo chef [Massimo Bottura](https://osteriafrancescana.it) dell'Osteria Francescana. Non troverete la parte più bella della nostra chiacchierata che ha a che fare con la nebbia del modenese, il comune di Castelnuovo Rangone e i tempi di cottura delle lingue di renna.*
 
+---
 
-«**Io vivo la vita come un sogno. Ho sempre creduto nelle mie idee e credere significa lottare per difenderle e realizzarle: per rendere visibile l’invisibile**. Ma come? 
+«Io vivo la vita come un sogno. Ho sempre creduto nelle mie idee e credere significa lottare per difenderle e realizzarle: per rendere visibile l’invisibile. Ma come? 
 
 Con il lockdown il mondo della ristorazione è stato fermato e tanti imprenditori si sono sentiti impotenti di fronte alla sfida di far quadrare i conti tenendo le saracinesche abbassate. Conosco bene questa sensazione di difficoltà: quando ho aperto la mia Osteria Francescana per anni siamo stati incompresi, ignorati. Mi guardavo intorno e mi dicevo: “Ma io ho buone idee!”. E non capivo. Chi veniva da noi ordinava piatti come il croccantino di foie gras e sorrideva.
 
@@ -46,7 +47,7 @@ Abbiamo non solo cucinato, ma anche riso e sensibilizzato le persone a ridurre g
 
 **E di un’ultima cosa sono certo: se ti fai forza e rimani lucido, guarderai al passato in chiave critica e mai nostalgica, troverai il modo di portare il meglio del passato nel futuro così da continuare a far evolvere le tradizioni. Perché nel mio futuro ci sarà sempre futuro**». 
 
-*© Grazia Italia 2021*
+`© Grazia Italia 2021`
 
 
-**PS:** se l'amore per la buona tavola ti porta a fare cose come cuocere le zucchine a 450°C forse può interressarti la mia newsletter [Secret Breakfast](https://secretbreakfast.club).
+**PS:** se l'amore per la buona tavola ti porta a fare cose come cuocere le zucchine a 450°C forse può interressarti la mia newsletter [Secret Breakfast](https://secretbreakfast.com).
