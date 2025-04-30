@@ -3,6 +3,7 @@ layout: layouts/base.njk
 title: Links
 ---
 
+{% set total = collections.links | length %}
 <section class="show-link-underlines">
   <div class="flex-between">
     <h1>Links</h1>
@@ -12,7 +13,7 @@ title: Links
   {% for link in collections.links %}
     <article>
       <h3>
-        <span>✱ {{ loop.index }}</span><br>
+        <span>&#10042; {{ total - loop.index0 }}</span>
         <a href="{{ link.data.url }}">{{ link.data.title }}</a>
       </h3>
       <div class="description">

@@ -1,0 +1,27 @@
+---
+permalink: /links/feed.xml
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Links</title>
+    <link>/links/</link>
+    <description>My linkblog</description>
+    <language>en-en</language>
+    <lastBuildDate>{{ collections.links | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
+
+    {% for item in collections.links %}
+    <item>
+      <title>{{ item.data.title }}</title>
+      <link>{{ item.data.url }}</link>
+      <guid isPermaLink="false">{{ item.data.url }}</guid>
+      <pubDate>{{ item.date | dateToRfc3339 }}</pubDate>
+      <description><![CDATA[
+        {{ item.templateContent }}
+      ]]></description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
