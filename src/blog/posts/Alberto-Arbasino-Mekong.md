@@ -8,7 +8,7 @@ tags:
 - books
 ---
 
-![Alberto Arbasino](/images/vault/arbasino.jpg)
+![Alberto Arbasino](/assets/images/vault/arbasino.jpg)
 
 
 _E' morto nella notte lo scrittore e giornalista Alberto Arbasino. Tra i protagonisti del Gruppo '63, con una grande produzione che ha spaziato dai romanzi alla saggistica, Arbasino aveva 90 anni._ 
@@ -24,10 +24,10 @@ Io mai stato un critico letterario. Sempre stato un lettore appassionato. Di sic
 Metto tutto qui. Per chi volesse dilettarsi.
 
 
-![Mekong](/images/vault/mekong2.jpg)
+![Mekong](/assets/images/vault/mekong2.jpg)
 
 
-## STORDITO DALLE PAROLE di Piero Macchioni
+### STORDITO DALLE PAROLE<br>di Piero Macchioni
 [Ignorante!](https://ricerca.repubblica.it/repubblica/archivio/repubblica/1996/05/28/stordito-dalle-parole.html) Così, se fossi Arbasino, apostroferei il firmatario di questa recensione. Scrivere ed essere criticati da chi non sa, non conosce e non capisce. No, non ho scritto per un liceale ignorantello che non sa apprezzare il mio lavoro. 
 Ma io, liceale ignorantello, glielo devo proprio dire; il suo libro è un monumento alla pienezza di sé, al virtuosismo intellettuale della penna, alla superbia artistica, non all'evoluzione dello scrivere. 
 
@@ -38,7 +38,7 @@ E' un modo di scrivere poco accessibile; lo stile di Arbasino sopra ogni contenu
 Se, invece, Arbasino ha sentito il bisogno di "divertirsi" con la penna, o meglio di esprimersi in un testo senza badare a quanti lo avrebbero potuto interpretare, leggere, capire, sono contento di aver vissuto questo suo momento artistico; conscio però, che per chi ha 18 anni e una cultura classica prettamente occidentale la sua rimane una serie di parole, colte, e riflessioni, colte anch' esse, che conservano il fascino della cultura solo per chi è ignorante, come me.
 
 
-## CARO PIERO, SEI COME MIO PADRE di Alberto Arbasino
+### CARO PIERO, SEI COME MIO PADRE<br>di Alberto Arbasino
 
 [No, caro Piero!](https://ricerca.repubblica.it/repubblica/archivio/repubblica/1996/05/28/caro-piero-sei-come-mio-padre.html) Non ti darei mai dell'ignorante, perché fai gli stessi ragionamenti dei miei genitori. Erano piuttosto colti, laureati tutt'e due, ma si sentivano spaesati e scoraggiati davanti alla letteratura e alla pittura e alla musica del Novecento perché le trovavano incomprensibili e inaccessibili alla cultura e al gusto 'medio' di chi ama e apprezza Monet, Puccini, Moravia, insomma "l'arte alla nostra portata". Niente Biennali di Venezia, dunque; niente concerti di musica sinfonica o da camera; niente avanguardie o sperimentalismi. Consideravano, insomma, che "a una certa età" la loro formazione culturale si era conclusa; non sentivano il bisogno di estenderla; non imparavano neanche una parola di inglese o tedesco pure andando in vacanza a Londra e a Vienna (bastava il francese imparato a scuola). E anche alla Scala, ci tornavano solo per ascoltare opere che conoscevano già e "adatte a noi". Al cinema, film "di riposo". 
 
