@@ -11,7 +11,8 @@ title: Links
 
   {% for link in collections.links %}
     <article>
-      <h2><a href="{{ link.data.url }}">{{ link.data.title }}</a></h2>
+      <p><span>&#10042; 132</span></p><br>
+      <h3><a href="{{ link.data.url }}">{{ link.data.title }}</a></h3>
       <div class="description">
         {{ link.templateContent | safe }}
       </div>
