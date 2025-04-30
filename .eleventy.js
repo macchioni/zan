@@ -44,11 +44,6 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("src/links/*.md").reverse();
   });
 
-  // Collezione posts
-  eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse();
-  });
-
   // Collezione dei tag filtrando quelli "falsi"
   eleventyConfig.addCollection("tagList", function (collection) {
     let tagSet = {};
