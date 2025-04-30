@@ -3,7 +3,6 @@ layout: layouts/post.njk
 date: 2021-05-05
 title: What a creative can learn from Eleven Madison Park going vegan
 description: Chef Daniel Humm reopened its New York restaurant with a plant-based menu. This risk can be inspiration for many people.
-layout: post
 published: true
 tags:
 - restaurant
@@ -16,6 +15,8 @@ One of my favorite action movies on Netflix is [7 Days Out](https://www.netflix.
 One episode is dedicated to the renovation of Eleven Maidson Park, the highly acclaimed New York City restaurant. And, in the mother scene, you see dozens of ducks (aka thousands of dollars) hanging in a world-class glass fridge.
 
 The ducks were destined to become the lavender honey-glazed signature dish by chef Daniel Humm.
+
+![Winter 2025: Agedashi Tofu with Brussels Sprouts and Basil with wine](https://images.squarespace-cdn.com/content/v1/661d75b635d9930903bb9d39/ccb743c3-3d1e-4883-8cbf-7ba5444d4b3f/Winter+2025-Agedashi+Tofu+with+Brussels+Sprouts+and+Basil+with+wine_Evan+Sung.jpg)
 
 #### Things they change, my friend
 
@@ -34,3 +35,5 @@ Two.
 **Reinventing is risky, but if you're creative, you cannot be defined only by what you did in the past.**
 
 *PS:* fancy some [Eleven Madison Park Granola](https://www.chiceats.com/recipe/emp-cookbook-vegetarian/eleven-madison-parks-granola)? 
+
+*PPS:* update, the vegan revolution [was a success](https://www.gastromondiale.com/eleven-madison-park/)
