@@ -11,17 +11,17 @@ tags:
 ![Alberto Arbasino](/assets/images/vault/arbasino.jpg)
 
 
-_E' morto nella notte lo scrittore e giornalista Alberto Arbasino. Tra i protagonisti del Gruppo '63, con una grande produzione che ha spaziato dai romanzi alla saggistica, Arbasino aveva 90 anni._ 
+`E' morto nella notte lo scrittore e giornalista Alberto Arbasino. Tra i protagonisti del Gruppo '63, con una grande produzione che ha spaziato dai romanzi alla saggistica, Arbasino aveva 90 anni.` 
 
-Detta in breve. Seconda liceo classico, Liceo Virgilio di Roma, maggio 1996. La professoressa d'italiano ci fa partecipare a un concorso legato al Premio Grinzane Cavour: bisogna recensire ognuno un libro. A me capita _Mekong_ (Adelphi) di Alberto Arbasino. Con indolenza adolescenziale, rintronato dall'inizio torrentizio e cultural-citazionarolo del libro, scrivo una recensione stroncatura dandomi apertamente del deficiente. In effetti non sapevo neanche chi fosse, Arbasino. 
+Detta in breve. Seconda liceo classico, Liceo Virgilio di Roma, maggio 1996. La professoressa d'italiano ci fa partecipare a un concorso legato al Premio Grinzane Cavour: bisogna recensire ognuno un libro. A me capita _Mekong_ (Adelphi) di Alberto Arbasino. Con indolenza adolescenziale, rintronato dall'inizio torrentizio e cultural-citazionarolo del libro, scrivo una recensione stroncatura, dandomi apertamente del deficiente. In effetti non sapevo bene neanche chi fosse, questo Arbasino. 
 
-Risultato: qualche giorno dopo la mia recensione finisce su Repubblica, edizione nazionale, apertura delle pagine culturali. Con risposta di Arbasino medesimo. 
+Risultato: qualche giorno dopo, la mia recensione finisce su Repubblica, edizione nazionale, apertura delle pagine culturali. Con risposta di Arbasino medesimo. 
 
-Perché? Ufficialmente per mostrare la distanza tra quello che si insegna a scuola e la vera letteratura contemporanea. Meno ufficialmente: un liceale aveva scritto quell'"Arbasi', ma che stai a di'?" che qualcuno negli anni si era devotamente tenuto nella penna. 
+Perché? Ufficialmente per mostrare la distanza tra quello che viene insegnato a scuola e la vera letteratura contemporanea. Meno ufficialmente: un liceale aveva scritto quell'"Arbasi', ma che stai a di'?" che qualcuno negli anni si era devotamente tenuto nella penna. 
 
-Io mai stato un critico letterario. Sempre stato un lettore appassionato. Di sicuro a quel tempo ero solo un liceale un po' sgamato (a scrivere, perlomeno). Ma se sono finito a fare il giornalista lo devo anche a quella professoressa, Luciana Mastrogiovanni (nello stesso giorno in cui uscii sul giornale mi diede una carezza per _Mekong_ e un 5- su Sallustio), alla redazione Cultura di Repubblica di allora (ricordassi un nome...) e anche al colpo da maestro finale di Arbasino nella sua risposta. 
+Io mai stato un critico letterario. Sempre stato un lettore appassionato. Di sicuro, a quel tempo ero solo un liceale un po' sgamato (a scrivere, perlomeno). Ma se sono finito a fare il giornalista lo devo anche a quella professoressa, Luciana Mastrogiovanni (nello stesso giorno in cui uscii sul giornale mi diede una carezza per _Mekong_ e un 5- su Sallustio), alla redazione Cultura di Repubblica di allora (ricordassi un nome...) e anche al colpo da maestro finale di Arbasino nella sua risposta. 
 
-Metto tutto qui. Per chi volesse dilettarsi.
+Metto tutto qui. 
 
 
 ![Mekong](/assets/images/vault/mekong2.jpg)
