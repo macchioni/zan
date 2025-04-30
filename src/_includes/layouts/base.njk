@@ -1,65 +1,108 @@
 <!DOCTYPE html>
-<html lang="it" color-mode="light">
+<html lang="en" color-mode="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} | {% endif %}Il Mio Sito</title>
-  <meta name="description" content="{% if description %}{{ description }}{% else %}Il mio sito personale{% endif %}">
+
+  <title>{% if title %}{{ title }} | {% endif %}Piero Macchioni</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Journalism, food writing and slow publishing by Piero Macchioni.{% endif %}">
+  <meta name="author" content="Piero Macchioni">
+  <meta name="language" content="en">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+
+  <!-- RSS Feeds -->
+  <link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Feed RSS Journal">
+  <link rel="alternate" href="/links/feed.xml" type="application/atom+xml" title="Feed RSS Links">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- Google Fonts e Fontawesome -->
   <style>@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');</style>
   <link rel="stylesheet" href="/assets/css/all.min.css">
+
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="shortcut icon" href="/assets/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Piero" />
   <link rel="manifest" href="/assets/site.webmanifest" />
-  <link rel="alternate" href="/blog/feed.xml" type="application/atom+xml" title="Feed RSS Journal">
-  <link rel="alternate" href="/links/feed.xml" type="application/atom+xml" title="Feed RSS Links">
-  <!-- Open Graph / Mastodon -->
-  <meta name="fediverse:creator" content="@piero@c.im">		
-  <!-- Open Graph / Facebook -->
+  <meta name="apple-mobile-web-app-title" content="Piero" />
+
+  <!-- Fediverse / Mastodon -->
+  <meta name="fediverse:creator" content="@piero@c.im">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
-  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
+  <meta property="og:title" content="{{ title or metadata.title }}">
   <meta property="og:description" content="{{ description or metadata.description }}">
   <meta property="og:image" content="{{ metadata.url }}{{ image or metadata.image }}">
+  <meta property="og:locale" content="en_US">
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="{{ metadata.url }}{{ page.url }}">
-  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
+  <meta name="twitter:title" content="{{ title or metadata.title }}">
   <meta name="twitter:description" content="{{ description or metadata.description }}">
   <meta name="twitter:image" content="{{ metadata.url }}{{ image or metadata.image }}">
   <meta name="twitter:site" content="@pieromacchioni">
   <meta name="twitter:creator" content="@pieromacchioni">
+
+  <!-- JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if layout == 'post' %}Article{% else %}WebSite{% endif %}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ metadata.url }}{{ page.url }}"
+    },
+    "headline": "{{ title | escape }}",
+    "description": "{{ description or metadata.description | escape }}",
+    {% if image or metadata.image %}
+    "image": "{{ metadata.url }}{{ image or metadata.image }}",
+    {% endif %}
+    "author": {
+      "@type": "Person",
+      "name": "Piero Macchioni"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Piero Macchioni",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ metadata.url }}/assets/apple-touch-icon.png"
+      }
+    },
+    "datePublished": "{{ page.date or metadata.buildTime }}",
+    "inLanguage": "en"
+  }
+  </script>
 </head>
 
 <body class="{{ pageClass }}">
   {% include "components/header.njk" %}
-  
+
   <main>
     {{ content | safe }}
   </main>
-  
+
   {% include "components/footer.njk" %}
-  
+
   <script>
-    // Script per gestire il color mode switcher
     document.addEventListener('DOMContentLoaded', () => {
       const colorModeBtn = document.querySelector('.color-mode__btn');
-      
-      colorModeBtn.addEventListener('click', () => {
-        const html = document.documentElement;
-        const currentMode = html.getAttribute('color-mode');
-        const newMode = currentMode === 'light' ? 'dark' : 'light';
-        
-        html.setAttribute('color-mode', newMode);
-        localStorage.setItem('color-mode', newMode);
-      });
-      
-      // Ripristina il tema salvato
+      if (colorModeBtn) {
+        colorModeBtn.addEventListener('click', () => {
+          const html = document.documentElement;
+          const currentMode = html.getAttribute('color-mode');
+          const newMode = currentMode === 'light' ? 'dark' : 'light';
+          html.setAttribute('color-mode', newMode);
+          localStorage.setItem('color-mode', newMode);
+        });
+      }
       const savedMode = localStorage.getItem('color-mode');
       if (savedMode) {
         document.documentElement.setAttribute('color-mode', savedMode);
