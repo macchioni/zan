@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: "First Post"
 description: "A year when projects are in full swing."
 date: 2025-04-25
+published: false
 tags: 
   - posts
   - 11ty
