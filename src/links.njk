@@ -9,11 +9,12 @@ title: Now
 </section>
 
 
-<ul class="links-list">
-  {% for link in collections.links %}
-    <li>✺ <a href="{{ link.data.url }}">{{ link.data.title }}</a></li>
-  {% endfor %}
-</ul>
+<article>
+  <h2><a href="{{ link.data.url }}">{{ link.data.title }}</a></h2>
+  <div class="description">
+    {{ link.templateContent | safe }}
+  </div>
+</article>
 
 
 <section class="show-link-underlines">
