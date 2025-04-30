@@ -1,11 +1,10 @@
 ---
 layout: layouts/post.njk
-date: 2020-03-23
-title: Quando Arbasino mi disse che ero come suo padre - e avevo solo 17 anni
-description: La volta in cui stroncai Alberto Arbasino sull'edizione nazionale di Repubblica.
-published: true
-tags:
-- books
+date: "2020-03-23"
+title: "Quando Arbasino mi disse che ero come suo padre. E avevo solo 17 anni"
+description: "La volta in cui stroncai Alberto Arbasino sull'edizione nazionale di Repubblica."
+image: "/assets/images/vault/mekong2.jpg"
+tags: ["books"]
 ---
 
 ![Alberto Arbasino](/assets/images/vault/arbasino.jpg)
