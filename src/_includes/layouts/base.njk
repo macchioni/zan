@@ -21,19 +21,17 @@
   <!-- Open Graph / Mastodon -->
   <meta name="fediverse:creator" content="@piero@c.im">		
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-  <meta property="og:site_name" content="Piero✱">
+  <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
+  <meta property="og:description" content="{{ description or metadata.description }}">
+  <meta property="og:image" content="{{ metadata.url }}{{ image or metadata.image }}">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-  <meta name="twitter:image:alt" content="">
+  <meta name="twitter:url" content="{{ metadata.url }}{{ page.url }}">
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ description or metadata.description }}">
+  <meta name="twitter:image" content="{{ metadata.url }}{{ image or metadata.image }}">
   <meta name="twitter:site" content="@pieromacchioni">
   <meta name="twitter:creator" content="@pieromacchioni">
 </head>
