@@ -1,56 +1,20 @@
 ---
 layout: layouts/base.njk
-title: Now
+title: Links
 ---
 
-<section class="flex-between">
-<h1>Links</h1>
-<span><a class="rss-feed" href="href="/links/feed.xml">Links RSS</a></span>
-</section>
-
-
-<article>
-  <h2><a href="{{ link.data.url }}">{{ link.data.title }}</a></h2>
-  <div class="description">
-    {{ link.templateContent | safe }}
-  </div>
-</article>
-
-
 <section class="show-link-underlines">
-  <ul><li>
-      <p><span>&#10042; 135</span><br>
-      <a href="https://a.wholelottanothing.org/predictability-and-trust-is-key-to-american-business-and-its-disappearing-quickly/"><strong>Predictability and trust is key to American business, and they&#39;re disappearing quickly</strong></a></p>
-      <blockquote>
-      Every friend I have with a small business is looking at either doubling their prices, or shutting down in the coming year. It's frightening, but it's our new reality.
-      
-      <p>— Matt Haughey</p>
-      
-      </blockquote>
-      
-    </li><li>
-      <p><span>&#10042; 134</span><br>
-      <a href="https://scotvtboms.com/documenting/against-the-grain"><strong>Against the Grain</strong></a></p>
-      <blockquote>
-      I firmly believe that art, especially the independently-minded kind, should be accessible to all no matter location or individual circumstances. One of the things I’ve consciously attempted to do in my creative practice, and the products born of that, has been to keep them affordable.
-      
-      <p>— Scott Bovms</p>
-      
-      </blockquote>
-      
-      <p>In a generous and admirable move, Scott is making his beautiful Riso work <em>less</em> expensive, in an even bigger effort to make art more affordable. I’d already told him, I was surprised at how affordable they already were given the effort he’s put in to make them. </p>
-      
-    </li><li>
-      <p><span>&#10042; 133</span><br>
-      <a href="https://blovgroll.org"><strong>Ye Olde Blogroll</strong></a></p>
-      <blockquote>
-      As a professional wanderer I love roaming the world wide web freely, diving into rabbit holes of hyperlink after hyperlink. Blogroll.org is a way of sharing these explorations with you and giving back to the web.
-      
-      <p>— Ray & Mavnu</p>
-      
-      </blockquote>
-      
-      <p>What a lovely redesign and relaunch from new caretaker, <a href='https://manuelvmoreale.com'>Manu</a>. </p>
+  <div class="flex-between">
+    <h1>Links</h1>
+    <span><a class="rss-feed" href="/links/feed.xml">Links RSS</a></span>
+  </div>
 
-
+  {% for link in collections.links %}
+    <article>
+      <h2><a href="{{ link.data.url }}">{{ link.data.title }}</a></h2>
+      <div class="description">
+        {{ link.templateContent | safe }}
+      </div>
+    </article>
+  {% endfor %}
 </section>
