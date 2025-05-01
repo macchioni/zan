@@ -1488,14 +1488,14 @@ button.color-mode__btn {
     margin-right: 0.5rem; /* Distanza tra simbolo e link */
   }
 
-  Ecco una versione senza bordo circolare che mantiene le proporzioni naturali:
-css.profile-image {
-  margin-bottom: 1.5rem;
-  max-width: 120px; /* Dimensione contenuta */
-}
-
-.profile-image img {
-  width: 100%;
-  height: auto;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sottile ombra */
-}
+  .profile-image {
+    margin-bottom: 1.5rem;
+    max-width: 120px; /* Larghezza massima fissa */
+  }
+  
+  .profile-image img {
+    display: block; /* Previene comportamenti indesiderati */
+    width: 100%; /* Riempie il contenitore */
+    max-width: 100%; /* Non supera la larghezza del contenitore */
+    height: auto; /* Mantiene le proporzioni */
+  }
