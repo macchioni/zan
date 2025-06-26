@@ -1,26 +1,26 @@
 ---
-permalink: /journal/feed.xml
+permalink: /links/feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Journal - Piero Macchioni</title>
-  <subtitle>Journal posts from Piero Macchioni</subtitle>
-  <link href="{{ metadata.url }}/journal/feed.xml" rel="self"/>
+  <title>Links - Piero Macchioni</title>
+  <subtitle>Link posts from Piero Macchioni</subtitle>
+  <link href="{{ metadata.url }}/links/feed.xml" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.journal | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.links | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
     <name>Piero Macchioni</name>
   </author>
-  {%- for post in collections.journal | reverse %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- for link in collections.links | reverse %}
+  {% set absolutePostUrl %}{{ link.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
-    <title>{{ post.data.title }}</title>
+    <title>{{ link.data.title | escape }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <updated>{{ link.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <content type="html"><![CDATA[{{ link.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}]]></content>
   </entry>
   {%- endfor %}
 </feed>
