@@ -1,13 +1,12 @@
 ---
-permalink: /links/feed.xml
+permalink: "/links/feed.xml"
 eleventyExcludeFromCollections: true
 ---
-
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <channel>
     <title>Links</title>
-    <link>/links/</link>
+    <link>{{ metadata.url }}/links/</link>
     <description>My linkblog</description>
     <language>en-en</language>
     <lastBuildDate>{{ collections.links | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
