@@ -140,7 +140,7 @@ ul li {
 }
 
 ul li::before {
-    content: "▪"; /* Simbolo custom come nel riferimento */
+    content: "✦"; /* Simbolo custom come nel riferimento */
     color: #6b7280; /* Colore grigio come nel riferimento */
     font-weight: bold;
     position: absolute;
