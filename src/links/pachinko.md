@@ -1,5 +1,5 @@
 ---
-title: "Fossili viventi"
+title: "Pachinko Vinyl!"
 url: "https://archive.org/details/@mrgneiss"
 date: 2025-06-15
 tags: 
