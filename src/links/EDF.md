@@ -7,4 +7,4 @@ tags:
   - vinyl
 ---
 
-Ho ritrovato il negoziante che negli Anni 90 mi fece ascoltare (e comprare) tanta della musica che più amo ancora. Ogni giorno, o quasi, un video per raccontare gli ultimi arrivi nel negozio Edf Point 1, a Roma, in via Mario Rigamonti 100 "I Granai". Soprattutto vinili e cd. Il sito del negozio è [vinylstrike.com](https://vinylstrike.com).
+📺 Ho ritrovato il negoziante che negli Anni 90 mi fece ascoltare (e comprare) tanta della musica che più amo ancora. Ogni giorno, o quasi, un video per raccontare gli ultimi arrivi nel negozio Edf Point 1, a Roma, in via Mario Rigamonti 100 "I Granai". Soprattutto vinili e cd. Il sito del negozio è [vinylstrike.com](https://vinylstrike.com).
