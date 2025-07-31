@@ -8,8 +8,7 @@ eleventyExcludeFromCollections: true
     <title>Piero Macchioni</title>
     <link>{{ metadata.url }}/blog/</link>
     <description>Journal</description>
-    <managingEditor>https://letterbird.co/piero</managingEditor>
-    <language>it-it</language>
+    <language>en-en</language>
     <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
 
     {% for post in collections.posts %}
