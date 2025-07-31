@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
       <link>{{ metadata.url }}{{ post.url }}</link>
       <guid isPermaLink="true">{{ metadata.url }}{{ post.url }}</guid>
       <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
-      <description><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(metadata.url + post.url) }}]]></description>
+      <description><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(metadata.url + post.url) | safe }}]]></description>
     </item>
     {% endfor %}
   </channel>
