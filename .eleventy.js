@@ -87,7 +87,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("htmlToAbsoluteUrls", pluginRss.htmlToAbsoluteUrls);
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addFilter("getNewestCollectionItemDate", pluginRss.getNewestCollectionItemDate);
-
+  eleventyConfig.addFilter("dateToRfc822", (dateObj) => {
+  return new Date(dateObj).toUTCString();
+});
+  
   // Shortcode per la buildTime
   eleventyConfig.addShortcode("buildTime", () => {
     return new Date().toLocaleString("it-IT", {

@@ -9,14 +9,14 @@ eleventyExcludeFromCollections: true
     <link>{{ metadata.url }}/links/</link>
     <description>My linkblog</description>
     <language>en-en</language>
-    <lastBuildDate>{{ collections.links | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
+    <lastBuildDate>{{ collections.links | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
 
     {% for item in collections.links %}
     <item>
       <title>{{ item.data.title }}</title>
       <link>{{ item.data.url }}</link>
       <guid isPermaLink="false">{{ item.data.url }}</guid>
-      <pubDate>{{ item.date | dateToRfc3339 }}</pubDate>
+      <pubDate>{{ item.date | dateToRfc822 }}</pubDate>
       <description><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(metadata.url + post.url) | safe }}]]></description>
     </item>
     {% endfor %}

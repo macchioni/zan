@@ -10,14 +10,14 @@ eleventyExcludeFromCollections: true
     <description>Journal</description>
     <managingEditor>https://letterbird.co/piero</managingEditor>
     <language>it-it</language>
-    <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</lastBuildDate>
+    <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
 
     {% for post in collections.posts %}
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ metadata.url }}{{ post.url }}</link>
       <guid isPermaLink="true">{{ metadata.url }}{{ post.url }}</guid>
-      <pubDate>{{ post.date | dateToRfc3339 }}</pubDate>
+      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
       <description><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(metadata.url + post.url) | safe }}]]></description>
     </item>
     {% endfor %}
