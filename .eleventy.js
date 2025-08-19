@@ -104,6 +104,7 @@ module.exports = function(eleventyConfig) {
 
   // Copia statica degli assets
   eleventyConfig.addPassthroughCopy("./src/assets");
+  eleventyConfig.addPassthroughCopy("./src/*.xsl");
 
   // Configurazione finale
   return {
