@@ -88,8 +88,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addFilter("getNewestCollectionItemDate", pluginRss.getNewestCollectionItemDate);
   eleventyConfig.addFilter("dateToRfc822", (dateObj) => {
-  return new Date(dateObj).toUTCString();
-});
+    return new Date(dateObj).toUTCString();
+  });
   
   // Shortcode per la buildTime
   eleventyConfig.addShortcode("buildTime", () => {
@@ -104,7 +104,10 @@ module.exports = function(eleventyConfig) {
 
   // Copia statica degli assets
   eleventyConfig.addPassthroughCopy("./src/assets");
-  eleventyConfig.addPassthroughCopy("./src/*.xsl");
+
+  // Copia feed.xsl e _headers dalla root
+  eleventyConfig.addPassthroughCopy("feed.xsl");
+  eleventyConfig.addPassthroughCopy("_headers");
 
   // Configurazione finale
   return {
