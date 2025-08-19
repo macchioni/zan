@@ -180,7 +180,7 @@
                   <xsl:value-of select="pubDate"/>
                 </div>
                 <div class="article-content">
-                  <xsl:value-of select="description" disable-output-escaping="yes"/>
+                  <xsl:value-of select="description"/>
                 </div>
                 <a href="{link}" target="_blank" class="read-more">
                   Leggi tutto →

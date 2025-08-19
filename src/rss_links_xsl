@@ -191,7 +191,7 @@
                     <xsl:value-of select="pubDate"/>
                   </div>
                   <div class="link-description">
-                    <xsl:value-of select="description" disable-output-escaping="yes"/>
+                    <xsl:value-of select="description"/>
                   </div>
                   <div class="link-meta">
                     <span class="external-indicator">↗</span>
