@@ -2,197 +2,37 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" encoding="UTF-8" indent="yes"/>
   
-  <xsl:template match="/rss">
+  <xsl:template match="/">
     <html>
       <head>
-        <title><xsl:value-of select="channel/title"/> - RSS Feed</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title><xsl:value-of select="rss/channel/title"/> - RSS Feed</title>
         <style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          
-          body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #fafafa;
-            margin: 0;
-          }
-          
-          .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-          }
-          
-          .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #e5e5e5;
-          }
-          
-          .rss-icon {
-            width: 32px;
-            height: 32px;
-            margin: 0 auto 1rem;
-            background: #ff6600;
-            border-radius: 6px;
-            position: relative;
-          }
-          
-          .rss-icon::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-          }
-          
-          h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-          }
-          
-          .description {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1rem;
-          }
-          
-          .meta {
-            font-size: 0.9rem;
-            color: #999;
-          }
-          
-          .articles {
-            display: grid;
-            gap: 2rem;
-          }
-          
-          .article {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            border: 1px solid #e5e5e5;
-            transition: all 0.2s ease;
-          }
-          
-          .article:hover {
-            border-color: #ccc;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          }
-          
-          .article h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-          }
-          
-          .article h2 a {
-            color: #1a1a1a;
-            text-decoration: none;
-          }
-          
-          .article h2 a:hover {
-            color: #0066cc;
-          }
-          
-          .article-date {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 1rem;
-          }
-          
-          .article-content {
-            color: #444;
-            line-height: 1.7;
-          }
-          
-          .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-          }
-          
-          .read-more:hover {
-            text-decoration: underline;
-          }
-          
-          .footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e5e5e5;
-            color: #999;
-            font-size: 0.9rem;
-          }
-          
-          @media (max-width: 640px) {
-            .container {
-              padding: 1rem;
-            }
-            
-            h1 {
-              font-size: 2rem;
-            }
-            
-            .article {
-              padding: 1rem;
-            }
-          }
+          body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; background: #fafafa; color: #333; }
+          h1 { color: #1a1a1a; text-align: center; margin-bottom: 2rem; }
+          .meta { text-align: center; color: #666; margin-bottom: 3rem; font-size: 0.9rem; }
+          .item { background: white; margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 8px; border: 1px solid #e5e5e5; }
+          .item h2 { margin: 0 0 0.5rem 0; font-size: 1.2rem; }
+          .item h2 a { color: #1a1a1a; text-decoration: none; }
+          .item h2 a:hover { color: #0066cc; }
+          .date { color: #999; font-size: 0.8rem; margin-bottom: 1rem; }
+          .content { line-height: 1.6; color: #555; }
         </style>
       </head>
       <body>
-        <div class="container">
-          <div class="header">
-            <div class="rss-icon"></div>
-            <h1><xsl:value-of select="channel/title"/></h1>
-            <p class="description"><xsl:value-of select="channel/description"/></p>
-            <p class="meta">
-              <xsl:value-of select="count(channel/item)"/> articoli • 
-              Ultimo aggiornamento: <xsl:value-of select="channel/lastBuildDate"/>
-            </p>
-          </div>
-          
-          <div class="articles">
-            <xsl:for-each select="channel/item">
-              <article class="article">
-                <h2>
-                  <a href="{link}" target="_blank">
-                    <xsl:value-of select="title"/>
-                  </a>
-                </h2>
-                <div class="article-date">
-                  <xsl:value-of select="pubDate"/>
-                </div>
-                <div class="article-content">
-                  <xsl:value-of select="description"/>
-                </div>
-                <a href="{link}" target="_blank" class="read-more">
-                  Leggi tutto →
-                </a>
-              </article>
-            </xsl:for-each>
-          </div>
-          
-          <div class="footer">
-            <p>Questo è un feed RSS. Puoi abbonarti usando il tuo lettore RSS preferito.</p>
-          </div>
+        <h1><xsl:value-of select="rss/channel/title"/></h1>
+        <div class="meta">
+          <xsl:value-of select="rss/channel/description"/>
         </div>
+        
+        <xsl:for-each select="rss/channel/item">
+          <div class="item">
+            <h2><a href="{link}"><xsl:value-of select="title"/></a></h2>
+            <div class="date"><xsl:value-of select="pubDate"/></div>
+            <div class="content"><xsl:value-of select="description"/></div>
+          </div>
+        </xsl:for-each>
       </body>
     </html>
   </xsl:template>
