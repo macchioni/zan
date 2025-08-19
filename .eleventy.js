@@ -106,8 +106,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets");
 
   // Copia feed.xsl e _headers dalla root
-  eleventyConfig.addPassthroughCopy("feed.xsl");
-  eleventyConfig.addPassthroughCopy("_headers");
+eleventyConfig.addPassthroughCopy("feed.xsl");
+eleventyConfig.addPassthroughCopy("_headers");
 
   // Configurazione finale
   return {
